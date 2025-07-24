@@ -4,10 +4,9 @@ import { Dialog, Stack, TextField } from '@fluentui/react'
 import { CopyRegular } from '@fluentui/react-icons'
 
 import { CosmosDBStatus } from '../../api'
-import Contoso from '../../assets/Contoso.svg'
 import { HistoryButton, ShareButton } from '../../components/common/Button'
 import { AppStateContext } from '../../state/AppProvider'
-
+import citadelLogo from '../../../public/assets/citadelLogo.jpeg';
 import styles from './Layout.module.css'
 
 const Layout = () => {
@@ -42,7 +41,7 @@ const Layout = () => {
 
   useEffect(() => {
     if (!appStateContext?.state.isLoading) {
-      setLogo(ui?.logo || Contoso)
+      setLogo(ui?.logo || citadelLogo)
     }
   }, [appStateContext?.state.isLoading])
 
@@ -80,7 +79,7 @@ const Layout = () => {
           <Stack horizontal verticalAlign="center">
             <img src={logo} className={styles.headerIcon} aria-hidden="true" alt="" />
             <Link to="/" className={styles.headerTitleContainer}>
-              <h1 className={styles.headerTitle}>{ui?.title}</h1>
+              <h1 className={styles.headerTitle}>Citadel</h1>
             </Link>
           </Stack>
           <Stack horizontal tokens={{ childrenGap: 4 }} className={styles.shareButtonContainer}>
